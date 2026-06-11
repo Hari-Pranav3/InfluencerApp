@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { TextInput } from 'react-native-paper';
 
 
-const Productsubmit = ({route}) => {
+const Productsubmit = ({route, navigation}) => {
     const {id,products}=route.params;
     console.log("recieved", products)
     const[dealername, setDealerName]= useState('')
@@ -25,7 +25,7 @@ const Productsubmit = ({route}) => {
       try{
         const response = await fetch(`http://10.230.43.178:8080/Products/${id}`,
           {
-            method: 'PUT',
+            method: 'POST',
             headers:{
               'Content-Type':'application/json',
             },
@@ -39,6 +39,7 @@ const Productsubmit = ({route}) => {
         const data = await response.json();
         console.log(data);
         Alert.alert(data.message)
+        navigation.navigate('Home')
       } catch(error) {
         console.log(error);
       }
