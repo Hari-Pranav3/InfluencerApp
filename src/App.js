@@ -10,6 +10,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack'
 import { useFonts } from 'expo-font'
 import Products from './Products'
 import Productsubmit from './Productsubmit'
+import Points from './Points'
+import Tracker from './Tracker'
 const Stack = createNativeStackNavigator();
 export default function App() {
   const[fontsLoaded]= useFonts({
@@ -74,7 +76,9 @@ export default function App() {
             }}
           />
           <Stack.Screen name='Products' component={Products}/>
+          <Stack.Screen name = 'Points' component={Points}/>
           <Stack.Screen name="Productsubmit" component={Productsubmit}/>
+          <Stack.Screen name='Tracker' component={Tracker}/>
           <Stack.Screen name="Profile" component={Profile}/>
         </Stack.Navigator>
       </NavigationContainer>

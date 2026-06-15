@@ -23,7 +23,7 @@ const Productsubmit = ({route, navigation}) => {
         return;
       }
       try{
-        const response = await fetch(`http://10.230.43.178:8080/Products/${id}`,
+        const response = await fetch(`http://10.162.113.178:8080/Products/${id}`,
           {
             method: 'POST',
             headers:{
@@ -39,7 +39,6 @@ const Productsubmit = ({route, navigation}) => {
         const data = await response.json();
         console.log(data);
         Alert.alert(data.message)
-        navigation.navigate('Home')
       } catch(error) {
         console.log(error);
       }

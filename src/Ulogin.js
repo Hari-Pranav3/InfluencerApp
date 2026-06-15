@@ -17,7 +17,7 @@ const UserLogin = ({ navigation }) =>
     }
     try{
       const response = await fetch(
-        'http://10.230.43.178:8080/UserLogin',
+        'http://10.162.113.178:8080/UserLogin',
         {
           method:'POST',
           headers:{

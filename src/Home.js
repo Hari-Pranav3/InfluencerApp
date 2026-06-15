@@ -7,6 +7,9 @@ const Home = ({ route,navigation }) => {
   const goProducts=()=>{
     navigation.navigate('Products',{id:user.InfluencerID})
   }
+  const goPoints=()=>{
+    navigation.navigate('Points',{id:user.InfluencerID})
+  }
   return (
     <ScrollView style={styles.container}>
       <View style={styles.row}>
@@ -26,7 +29,7 @@ const Home = ({ route,navigation }) => {
        </TouchableOpacity>
       </View>
       <View style={styles.row}>
-       <TouchableOpacity>
+       <TouchableOpacity onPress={goPoints}>
         <Card style={styles.card}>
           <Card.Content>
             <Text style={styles.cardtext}> Points </Text>
@@ -36,7 +39,7 @@ const Home = ({ route,navigation }) => {
        <TouchableOpacity>
         <Card style={styles.card}>
           <Card.Content>
-            <Text style={styles.cardtext}> Status </Text>
+            <Text style={styles.cardtext}> Graph </Text>
           </Card.Content>
         </Card>
        </TouchableOpacity>
@@ -45,7 +48,7 @@ const Home = ({ route,navigation }) => {
        <TouchableOpacity>
         <Card style={styles.card}>
           <Card.Content>
-            <Text style={styles.cardtext}> Points </Text>
+            <Text style={styles.cardtext}> Queries </Text>
           </Card.Content>
         </Card>
        </TouchableOpacity>
